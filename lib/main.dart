@@ -1,13 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:portfolio/core/config/connection/cubit/connected_cubit.dart';
+import 'package:portfolio/core/providers/drawer_provider.dart';
+import 'package:portfolio/core/providers/scroll_provider.dart';
 import 'package:portfolio/features/home/Peresention/view/home_view.dart';
 import 'package:portfolio/features/home/Peresention/view_model/change_theme_cubit/change_theme_cubit.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(
-    BlocProvider(
-      create: (context) => ChangeThemeCubit(),
-      child: const Portfolio(),
+    MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => ChangeThemeCubit(),
+        ),
+        BlocProvider(
+          create: (context) => ConnectedCubit(),
+        ),
+      ],
+      child: MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (_) => DrawerProvider()),
+          ChangeNotifierProvider(create: (_) => ScrollProvider()),
+        ],
+        child: const Portfolio(),
+      ),
     ),
   );
 }
@@ -17,46 +34,47 @@ class Portfolio extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final themeProvider = BlocProvider.of<ChangeThemeCubit>(context);
     return BlocBuilder<ChangeThemeCubit, ChangeThemeState>(
       builder: (context, state) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(
-              seedColor: Colors.deepPurple,
-              brightness: Brightness.light, // Light mode color scheme
-            ),
-            useMaterial3: true,
-          ),
-          darkTheme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(
-              seedColor: Colors.deepPurple,
-              brightness: Brightness.dark, // Dark mode color scheme
-            ),
-            useMaterial3: true,
-          ),
-          themeMode:themeProvider.themeMode , // Use the current theme mode
-          home: Scaffold(
-            appBar: AppBar(
-              title: const Text('Portfolio'),
-              actions: [
-                IconButton(
-                  icon: Icon(
-                    themeProvider.themeMode == ThemeMode.light
-                        ? Icons.dark_mode
-                        : Icons.light_mode,
-                  ),
-                  onPressed: () {
-                    themeProvider.toggleTheme();
-                  },
+        final themeProvider = context.read<ChangeThemeCubit>();
+        
+            return MaterialApp(
+              debugShowCheckedModeBanner: false,
+              theme: ThemeData(
+                colorScheme: ColorScheme.fromSeed(
+                  seedColor: Colors.deepPurple,
+                  brightness: Brightness.light,
                 ),
-              ],
-            ),
-            body: const HomeView(),
-          ),
+                useMaterial3: true,
+              ),
+              darkTheme: ThemeData(
+                colorScheme: ColorScheme.fromSeed(
+                  seedColor: Colors.deepPurple,
+                  brightness: Brightness.dark,
+                ),
+                useMaterial3: true,
+              ),
+              themeMode: themeProvider.themeMode,
+              home: Scaffold(
+                appBar: AppBar(
+                  title: const Text('Portfolio'),
+                  actions: [
+                    IconButton(
+                      icon: Icon(
+                        themeProvider.themeMode == ThemeMode.light
+                            ? Icons.dark_mode
+                            : Icons.light_mode,
+                      ),
+                      onPressed: themeProvider.toggleTheme,
+                    ),
+                  ],
+                ),
+                body: const HomeView(),
+              ),
+            );
+          },
         );
-      },
-    );
+      
+    
   }
 }
