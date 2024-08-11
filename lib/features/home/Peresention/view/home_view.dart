@@ -1,14 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/core/providers/drawer_provider.dart';
 import 'package:portfolio/features/home/Peresention/view/widget/home_view_body.dart';
+import 'package:portfolio/features/home/Peresention/view/widget/nav_bar.dart';
+import 'package:provider/provider.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    final DrawerProvider drawerProvider = Provider.of<DrawerProvider>(context);
+    return SafeArea(
       child: Scaffold(
-        body: HomeViewBody(),
+       
+        key: drawerProvider.key,
+        body: const Stack(
+          children: [
+            HomeViewBody(),
+
+          ],
+        ),
       ),
     );
   }

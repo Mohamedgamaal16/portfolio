@@ -4,9 +4,8 @@ class NavBarModel {
   static const List<String> names = [
     'Home',
     'Services',
-    'Abaout',
-    'Porfolio',
-    'Contect',
+    'About',
+    'Portfolio',
   ];
 
   static const List<IconData> icons = [
