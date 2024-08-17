@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/color/colors.dart';
+import 'package:portfolio/core/utils/app_styles.dart';
 
 class HoverButton extends StatefulWidget {
   const HoverButton({super.key});
@@ -26,11 +27,11 @@ class _HoverButtonState extends State<HoverButton> {
             setState(() => isHover = value);
           },
           onTap: () {},
-          child: const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          child:  Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             child: Text(
               "Contect",
-              style: TextStyle(color: Colors.white, fontSize: 16),
+              style: AppStyles.styleRegular16(context),
             ),
           ),
         ),

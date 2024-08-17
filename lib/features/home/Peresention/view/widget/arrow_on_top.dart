@@ -42,15 +42,15 @@ class ArrowOnTopState extends State<ArrowOnTop> {
             child: Material(
               // Replace this child with your own
               elevation: 8.0,
-              shape: CircleBorder(),
+              shape: const CircleBorder(),
               child: CircleAvatar(
                 backgroundColor: AppColors.primaryColor,
-                child: Icon(
+                radius: Responsive.isWeb(context) ? 30 : 22,
+                child:  Icon(
                   Icons.arrow_upward,
                   color: Colors.white,
-                  size: Responsive.isWeb(context) ? 30 : 20,
+                  size: Responsive.isWeb(context) ? 20 : 15,
                 ),
-                radius: Responsive.isWeb(context) ? 40 : 30,
               ),
             ),
           ),

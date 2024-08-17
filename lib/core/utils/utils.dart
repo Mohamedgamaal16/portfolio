@@ -5,7 +5,7 @@ class BodyUtils {
   static List<Widget> views(ScrollProvider scrollProvider) {
     return [
       Container(
-        color: Colors.amber,
+        color: Colors.white,
         height: 600,
       ),
       Container(
