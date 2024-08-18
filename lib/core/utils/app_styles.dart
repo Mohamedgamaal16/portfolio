@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/color/colors.dart';
 import 'package:portfolio/core/functions/function.dart';
+import 'package:portfolio/features/home/Peresention/view_model/change_theme_cubit/change_theme_cubit.dart';
+import 'package:provider/provider.dart';
 
 abstract class AppStyles {
+        
+
   static TextStyle styleRegular20(BuildContext context) {
+            final themeProvider = context.read<ChangeThemeCubit>();
+
     return TextStyle(
-        color: AppColors.primaryColor,
+        color: themeProvider.themeMode == ThemeMode.light
+                  ? AppColors.primaryColor
+                  : AppColors.whiteColor,
         fontFamily: 'josefinsans',
         fontWeight: FontWeight.w300,
         fontSize: ScreenSize.screeenWidth(context) < 1200
@@ -14,8 +22,9 @@ abstract class AppStyles {
   }  
   
   static TextStyle styleRegular16(BuildContext context) {
+
     return TextStyle(
-        color: AppColors.whiteColor,
+        color:   AppColors.whiteColor,
         fontFamily: 'josefinsans',
         fontWeight: FontWeight.w300,
         fontSize: ScreenSize.screeenWidth(context) < 1200

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/animations/entrance_fader.dart';
+import 'package:portfolio/core/color/colors.dart';
 import 'package:portfolio/core/providers/scroll_provider.dart';
 import 'package:portfolio/core/utils/app_styles.dart';
+import 'package:portfolio/features/home/Peresention/view_model/change_theme_cubit/change_theme_cubit.dart';
 import 'package:provider/provider.dart';
 
 class NavBarActionButton extends StatefulWidget {
@@ -23,6 +25,7 @@ class _NavBarActionButtonState extends State<NavBarActionButton> {
   @override
   Widget build(BuildContext context) {
     final scrollProvider = Provider.of<ScrollProvider>(context, listen: false);
+            final themeProvider = context.read<ChangeThemeCubit>();
 
     return EntranceFader(
       offset: const Offset(0, -10),
@@ -41,7 +44,11 @@ class _NavBarActionButtonState extends State<NavBarActionButton> {
             child: Text(
               widget.label,
               style: AppStyles.styleRegular20(context).copyWith(
-                color: isHover ? Colors.orange : Colors.black,
+                color: isHover
+              ? AppColors.primaryColor
+              : themeProvider.themeMode == ThemeMode.light
+                  ? AppColors.textColor
+                  : AppColors.whiteColor,
               ),
             ),
           ),
