@@ -6,6 +6,7 @@ import 'package:portfolio/core/providers/scroll_provider.dart';
 import 'package:portfolio/core/res/responsive.dart';
 import 'package:portfolio/features/home/Peresention/view/home_view.dart';
 import 'package:portfolio/features/home/Peresention/view/widget/arrow_on_top.dart';
+import 'package:portfolio/features/home/Peresention/view/widget/custom_drawer.dart';
 import 'package:portfolio/features/home/Peresention/view/widget/nav_bar_web.dart';
 import 'package:portfolio/features/home/Peresention/view/widget/nav_var_tab.dart';
 import 'package:portfolio/features/home/Peresention/view_model/change_theme_cubit/change_theme_cubit.dart';
@@ -51,15 +52,18 @@ class Portfolio extends StatelessWidget {
             useMaterial3: true,
           ),
           darkTheme: ThemeData(
+            // textTheme: const TextTheme(
+            //   bodyLarge: TextStyle(color: Colors.white),
+            // ),
             colorScheme: ColorScheme.fromSeed(
-              seedColor: Colors.deepPurple,
-              brightness: Brightness.dark,
-            ),
+                seedColor: Colors.deepPurple,
+                brightness: Brightness.dark,
+                background: AppColors.blackColor),
             useMaterial3: true,
           ),
           themeMode: themeProvider.themeMode,
           home: Scaffold(
-            drawer: const Drawer(),
+            drawer: const CustomDrawer(),
             // key: scaffo/ldKe, // Use the key here
             extendBodyBehindAppBar: true,
             appBar: PreferredSize(

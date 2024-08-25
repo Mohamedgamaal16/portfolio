@@ -20,7 +20,45 @@ abstract class AppStyles {
             ? getResponsiveFontSize(context, fontSize: 15)
             : getResponsiveFontSize(context, fontSize: 20));
   }  
+   static TextStyle styleRegular25(BuildContext context) {
+            final themeProvider = context.read<ChangeThemeCubit>();
+
+    return TextStyle(
+        color: themeProvider.themeMode == ThemeMode.light
+                  ? AppColors.blackColor
+                  : AppColors.whiteColor,
+        fontFamily: 'josefinsans',
+        fontWeight: FontWeight.w500,
+        fontSize: ScreenSize.screeenWidth(context) < 1200
+            ? getResponsiveFontSize(context, fontSize: 20)
+            : getResponsiveFontSize(context, fontSize: 25));
+  }    
   
+  static TextStyle styleRegular40(BuildContext context) {
+            final themeProvider = context.read<ChangeThemeCubit>();
+
+    return TextStyle(
+        color: themeProvider.themeMode == ThemeMode.light
+                  ? AppColors.blackColor
+                  : AppColors.whiteColor,
+        fontFamily: 'josefinsans',
+        fontWeight: FontWeight.w500,
+        fontSize: ScreenSize.screeenWidth(context) < 1200
+            ? getResponsiveFontSize(context, fontSize: 30)
+            : getResponsiveFontSize(context, fontSize: 40));
+  }   static TextStyle styleRegular30(BuildContext context) {
+            final themeProvider = context.read<ChangeThemeCubit>();
+
+    return TextStyle(
+        color: themeProvider.themeMode == ThemeMode.light
+                  ? AppColors.blackColor
+                  : AppColors.whiteColor,
+        fontFamily: 'josefinsans',
+        fontWeight: FontWeight.w500,
+        fontSize: ScreenSize.screeenWidth(context) < 1200
+            ? getResponsiveFontSize(context, fontSize: 20)
+            : getResponsiveFontSize(context, fontSize: 30));
+  }  
   static TextStyle styleRegular16(BuildContext context) {
 
     return TextStyle(

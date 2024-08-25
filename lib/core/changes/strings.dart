@@ -1,6 +1,6 @@
 String hellotag = '''Hi there, Welcome to My Space  ''';
 
-String yourname = "I'm Ahmed Belmekhfi,";
+String yourname = "I'm Mohamed Gamal,";
 
 String animationtxt1 = " Mobile Application Developer";
 String animationtxt2 = " UI/UX Designer";
@@ -23,3 +23,7 @@ String footerCopyright =
 String contectAddress = "P947+8RR, Bd de L'A.L.N, Oran";
 String contectEmail = "Info@aedbel.com\naedbel@gmail.com";
 String contectPhone = "+61 3 8376 6284\n+800 2345 6789";
+String downloadMyCv="Download CV";
+List<String> whatIDo = [
+  "A Mobile Application Developer","Also make Websites usnig flutter","Change your UI/UX Design to real product"
+];

@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/providers/scroll_provider.dart';
+import 'package:portfolio/features/home/Peresention/view/first_section.dart';
 
 class BodyUtils {
   static List<Widget> views(ScrollProvider scrollProvider) {
     return [
-      Container(
-        color: Colors.white,
-        height: 600,
-      ),
+     const FirstSectionView(),
       Container(
         color: Colors.black,
         height: 600,
