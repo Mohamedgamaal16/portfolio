@@ -2,9 +2,6 @@ String hellotag = '''Hi there, Welcome to My Space  ''';
 
 String yourname = "I'm Mohamed Gamal,";
 
-String animationtxt1 = " Mobile Application Developer";
-String animationtxt2 = " UI/UX Designer";
-String animationtxt3 = " Web Developer";
 
 //
 String contactHeadding = "Let’s try my service now!";
@@ -18,11 +15,11 @@ String aboutMiniDescription1 =
 String aboutMiniDescription2 =
     "Quia voluptas sit aspernatur aut odit aut fugit, sed ruiano consequntar magni dolores.";
 String footerCopyright =
-    "Developed by Ahmed Belmekhfi | Copyright aedbel © 2023.";
+    "Developed by Mohmaed Gamal | Copyright Gemy © 2024.";
 //contect
-String contectAddress = "P947+8RR, Bd de L'A.L.N, Oran";
-String contectEmail = "Info@aedbel.com\naedbel@gmail.com";
-String contectPhone = "+61 3 8376 6284\n+800 2345 6789";
+String contectAddress = "Mansoura - Egypt";
+String contectEmail = "Mahooomar53@gmail.com";
+String contectPhone = "+201050566622";
 String downloadMyCv="Download CV";
 List<String> whatIDo = [
   "A Mobile Application Developer","Also make Websites usnig flutter","Change your UI/UX Design to real product"

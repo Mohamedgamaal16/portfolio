@@ -5,7 +5,7 @@ import 'package:portfolio/features/home/Peresention/view/first_section.dart';
 class BodyUtils {
   static List<Widget> views(ScrollProvider scrollProvider) {
     return [
-     const FirstSectionView(),
+     Flexible(child: const FirstSectionView()),
       Container(
         color: Colors.black,
         height: 600,
