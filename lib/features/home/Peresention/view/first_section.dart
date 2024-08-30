@@ -9,8 +9,8 @@ class FirstSectionView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Responsive(
-        mobile: FirstSectionMobileView(),
-        tablet: FirstSectionMobileView(),
+        mobile: SafeArea(child: FirstSectionMobileView()),
+        tablet: SafeArea(child: FirstSectionMobileView()),
         web: FirstSectionWebView());
   }
 }

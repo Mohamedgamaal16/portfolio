@@ -4,7 +4,6 @@ import 'package:portfolio/core/color/colors.dart';
 import 'package:portfolio/core/functions/function.dart';
 import 'package:portfolio/core/utils/navbar_model.dart';
 import 'package:portfolio/features/home/Peresention/view/widget/custom_mobile_detailes_icon.dart';
-import 'package:portfolio/features/home/Peresention/view/widget/nav_bar_logo.dart';
 import 'package:portfolio/features/home/Peresention/view/widget/navbar_actions_button.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -13,9 +12,11 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: AppColors.whiteColor,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          const SizedBox(height:50),
           SizedBox(
             width: ScreenSize.screeenWidth(context) * 0.2,
             child: Image.asset(
@@ -39,12 +40,12 @@ class CustomDrawer extends StatelessWidget {
                         SizedBox(height: 28),
                         CustomDetailesIcon(
                           icon: FontAwesomeIcons.envelope,
-                          label: "Info@alkhalil.edu",
+                          label: "Mahooomar53@gmail.com",
                         ),
                         SizedBox(height: 10),
                         CustomDetailesIcon(
                           icon: Icons.phone_enabled_outlined,
-                          label: "+0201020304050",
+                          label: "+0201050566622",
                         ),
                         SizedBox(height: 28),
                       ],

@@ -24,3 +24,7 @@ String downloadMyCv="Download CV";
 List<String> whatIDo = [
   "A Mobile Application Developer","Also make Websites usnig flutter","Change your UI/UX Design to real product"
 ];
+
+
+// services
+String services="Services";

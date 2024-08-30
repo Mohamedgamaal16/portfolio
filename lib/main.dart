@@ -1,3 +1,6 @@
+import 'dart:ui';
+
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:portfolio/core/color/colors.dart';
@@ -24,11 +27,17 @@ void main() {
         ),
       ],
       child: MultiProvider(
-        providers: [
-          ChangeNotifierProvider(create: (_) => ScrollProvider()),
-        ],
-        child: const Portfolio(),
-      ),
+          providers: [
+            ChangeNotifierProvider(create: (_) => ScrollProvider()),
+          ],
+          child:
+           DevicePreview(
+            builder: (context) => const 
+            
+             Portfolio(),
+          )
+          
+          ),
     ),
   );
 }
@@ -43,6 +52,7 @@ class Portfolio extends StatelessWidget {
         final themeProvider = context.read<ChangeThemeCubit>();
 
         return MaterialApp(
+          scrollBehavior: MyCustomScrollBehavior(),
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(
@@ -64,13 +74,20 @@ class Portfolio extends StatelessWidget {
           themeMode: themeProvider.themeMode,
           home: Scaffold(
             drawer: const CustomDrawer(),
-            // key: scaffo/ldKe, // Use the key here
             extendBodyBehindAppBar: true,
             appBar: PreferredSize(
               preferredSize: const Size.fromHeight(100),
               child: Responsive(
-                mobile: NavBarTab(themeProvider: themeProvider),
-                tablet: NavBarTab(themeProvider: themeProvider),
+                mobile: SafeArea(
+                    child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: NavBarTab(themeProvider: themeProvider),
+                )),
+                tablet: SafeArea(
+                    child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: NavBarTab(themeProvider: themeProvider),
+                )),
                 web: NavbarWeb(themeProvider: themeProvider),
               ),
             ),
@@ -85,4 +102,13 @@ class Portfolio extends StatelessWidget {
       },
     );
   }
+}
+
+class MyCustomScrollBehavior extends MaterialScrollBehavior {
+  // Override behavior methods and getters like dragDevices
+  @override
+  Set<PointerDeviceKind> get dragDevices => {
+        PointerDeviceKind.touch,
+        PointerDeviceKind.mouse,
+      };
 }

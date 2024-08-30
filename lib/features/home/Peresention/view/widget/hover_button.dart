@@ -31,7 +31,7 @@ class _HoverButtonState extends State<HoverButton> {
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             child: Text(
               "Contect",
-              style: AppStyles.styleRegular16(context),
+              style: AppStyles.styleRegular16(context).copyWith(color: AppColors.whiteColor),
             ),
           ),
         ),

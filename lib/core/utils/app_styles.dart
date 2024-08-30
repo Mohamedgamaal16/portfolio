@@ -17,9 +17,10 @@ abstract class AppStyles {
         fontFamily: 'josefinsans',
         fontWeight: FontWeight.w300,
         fontSize: ScreenSize.screeenWidth(context) < 1200
-            ? getResponsiveFontSize(context, fontSize: 15)
+            ? getResponsiveFontSize(context, fontSize: 18)
             : getResponsiveFontSize(context, fontSize: 20));
   }  
+  
    static TextStyle styleRegular25(BuildContext context) {
             final themeProvider = context.read<ChangeThemeCubit>();
 
@@ -44,7 +45,7 @@ abstract class AppStyles {
         fontFamily: 'josefinsans',
         fontWeight: FontWeight.w500,
         fontSize: ScreenSize.screeenWidth(context) < 1200
-            ? getResponsiveFontSize(context, fontSize: 30)
+            ? getResponsiveFontSize(context, fontSize: 25)
             : getResponsiveFontSize(context, fontSize: 40));
   }   static TextStyle styleRegular30(BuildContext context) {
             final themeProvider = context.read<ChangeThemeCubit>();
@@ -60,9 +61,12 @@ abstract class AppStyles {
             : getResponsiveFontSize(context, fontSize: 30));
   }  
   static TextStyle styleRegular16(BuildContext context) {
+            final themeProvider = context.read<ChangeThemeCubit>();
 
     return TextStyle(
-        color:   AppColors.whiteColor,
+        color:   themeProvider.themeMode == ThemeMode.light
+                  ? AppColors.blackColor
+                  : AppColors.whiteColor,
         fontFamily: 'josefinsans',
         fontWeight: FontWeight.w300,
         fontSize: ScreenSize.screeenWidth(context) < 1200
@@ -84,7 +88,7 @@ double getResponsiveFontSize(BuildContext context, {required double fontSize}) {
 double getScaleFactor(BuildContext context) {
   double width = MediaQuery.of(context).size.width;
   if (width < 600) {
-    return width / 500;
+    return width / 450;
   } else if (width < 1200) {
     return width / 800;
   } else {
