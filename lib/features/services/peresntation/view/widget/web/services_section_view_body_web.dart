@@ -3,16 +3,13 @@ import 'package:portfolio/core/animations/entrance_fader.dart';
 import 'package:portfolio/core/changes/strings.dart';
 import 'package:portfolio/core/functions/function.dart';
 import 'package:portfolio/core/utils/app_styles.dart';
-import 'package:portfolio/features/home/Peresention/view_model/change_theme_cubit/change_theme_cubit.dart';
 import 'package:portfolio/features/services/peresntation/view/widget/web/services_card_web.dart';
-import 'package:provider/provider.dart';
 
 class ServicesSectionViewBodyWeb extends StatelessWidget {
   const ServicesSectionViewBodyWeb({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final themeProvider = context.watch<ChangeThemeCubit>(); // Listen for changes
 
     final screenWidth = ScreenSize.screeenWidth(context);
     final screenHeight = ScreenSize.screeenHeight(context);

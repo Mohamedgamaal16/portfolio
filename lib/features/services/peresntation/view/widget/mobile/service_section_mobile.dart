@@ -3,18 +3,14 @@ import 'package:portfolio/core/animations/entrance_fader.dart';
 import 'package:portfolio/core/changes/strings.dart';
 import 'package:portfolio/core/functions/function.dart';
 import 'package:portfolio/core/utils/app_styles.dart';
-import 'package:portfolio/features/home/Peresention/view_model/change_theme_cubit/change_theme_cubit.dart';
 import 'package:portfolio/features/services/peresntation/view/widget/web/services_card_web.dart';
-import 'package:provider/provider.dart';
 
 class ServicesSectionViewBodyMobile extends StatelessWidget {
   const ServicesSectionViewBodyMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final themeProvider =
-        context.watch<ChangeThemeCubit>(); // Listen for changes
-
+    
     final screenWidth = ScreenSize.screeenWidth(context);
     final screenHeight = ScreenSize.screeenHeight(context);
 
@@ -44,6 +40,7 @@ class ServicesSectionViewBodyMobile extends StatelessWidget {
                 delay: const Duration(milliseconds: 0),
                 duration: const Duration(milliseconds: 800),
                 child: GridView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
                   padding: const EdgeInsets.only(left: 13, right: 13, top: 8),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 1,

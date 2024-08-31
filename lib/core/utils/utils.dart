@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/providers/scroll_provider.dart';
+import 'package:portfolio/features/about/peresntation/view/about_view.dart';
 import 'package:portfolio/features/home/Peresention/view/first_section.dart';
 import 'package:portfolio/features/home/Peresention/view_model/download_cv_provider.dart';
 import 'package:portfolio/features/services/peresntation/view/services_view.dart';
@@ -13,11 +14,12 @@ class BodyUtils {
             return DownloadMyCvProvider();
           },
           child: const FirstSectionView()),
-    const ServicesSectionView(),
-      Container(
-        color: Colors.red,
-        height: 600,
-      ),
+      const ServicesSectionView(),
+      ChangeNotifierProvider(
+          create: (BuildContext context) {
+            return DownloadMyCvProvider();
+          },
+          child: const AboutSectionView()),
       Container(
         color: Colors.green,
         height: 600,

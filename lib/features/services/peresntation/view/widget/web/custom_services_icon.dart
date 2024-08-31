@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/core/changes/strings.dart';
 import 'package:portfolio/core/color/colors.dart';
 import 'package:portfolio/core/functions/function.dart';
-import 'package:portfolio/core/utils/services_model.dart';
 
 class CustomServicesIcon extends StatefulWidget {
   const CustomServicesIcon({super.key, required this.index});

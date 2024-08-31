@@ -70,9 +70,10 @@ class FirstSectionMobileView extends StatelessWidget {
               child: Text(
                 miniDescription,
                 textAlign: TextAlign.justify,
-                style: AppStyles.styleRegular16(context),
+                style: AppStyles.styleRegular14(context),
               ),
             ),
+            const SizedBox(height: 15,),
             const CustomDownloadCv(height: 0.35),
             Center(
               child: SizedBox(
