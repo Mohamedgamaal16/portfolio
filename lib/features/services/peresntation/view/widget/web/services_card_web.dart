@@ -55,7 +55,7 @@ class _ServicesViewCardState extends State<ServicesViewCard> {
         child: Row(
           children: [
             const SizedBox(width: 10),
-            CustomServicesIcon(index: widget.index),
+            CustomServicesIcon(index: widget.index, ),
             const SizedBox(width: 10),
             Expanded(
               child: Column(

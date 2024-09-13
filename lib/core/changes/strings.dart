@@ -1,7 +1,6 @@
 import 'dart:ui';
-
-import 'package:portfolio/core/utils/about_model.dart';
-import 'package:portfolio/core/utils/services_model.dart';
+import 'package:portfolio/features/about/data/about_model.dart';
+import 'package:portfolio/features/services/data/services_model.dart';
 
 String hellotag = '''Hi there, Welcome to My Space  ''';
 
@@ -33,14 +32,7 @@ List<ServicesModel> servicesUtils = [
   ServicesModel(
     name: 'Ui/Ux Design',
     icon: 'assets/icons/service-icon1.png',
-    description:
-        "I'm creating elegant designs suited to your needs following core design theory. ",
-  ),
-  ServicesModel(
-    name: 'Web Design',
-    icon: 'assets/icons/service-icon2.png',
-    description:
-        "Are you interested in the great Web Design? Let's make it a reality.",
+    description: "I'm developing your elegant designs to a real product. ",
   ),
   ServicesModel(
     name: 'Web Development',
@@ -54,16 +46,22 @@ List<ServicesModel> servicesUtils = [
     description:
         "Are you interested in the great Mobile app? Let's make it a reality.",
   ),
+  ServicesModel(
+    name: 'App performance',
+    icon: 'assets/icons/service-icon2.png',
+    description:
+        "improving performance for a seamless user experience.",
+  ),
 ];
 
 // about
 String about = "About me";
 String mySkill = "My Skills";
-String didgitl = "Beatiful and unique Digital Experiences";
+String didgitl = "Beatiful and unique mobile apps and websites";
 String aboutMiniDescription1 =
-    "Nostrum exercitationem ullam corporis suscipit laborioa nisi ut aliquid exrea commodi consequatur magni dolores aos qui ratione voluptatem nesciunt.";
+    "I am a Flutter Developer with a passion for creating responsive and adaptive mobile and web applications. My experience spans various projects where I have integrated APIs, managed state with Bloc and Cubit, and optimized performance for a seamless user experience.";
 String aboutMiniDescription2 =
-    "Quia voluptas sit aspernatur aut odit aut fugit, sed ruiano consequntar magni dolores.";
+    "With a strong foundation in software engineering and a focus on delivering high-quality code, I strive to bring innovative solutions to life. Let's work together to turn your ideas into reality!";
 
 List<AboutModel> aboutUtils = [
   AboutModel(
@@ -91,3 +89,8 @@ List<AboutModel> aboutUtils = [
     color: const Color(0xFF3F396D),
   ),
 ];
+
+
+// portfolio
+String portfolio = "Creative Works";
+String portfolioMiniDescription ="Check out my latest projects";

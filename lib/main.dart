@@ -31,11 +31,12 @@ void main() {
             ChangeNotifierProvider(create: (_) => ScrollProvider()),
           ],
           child:
-           DevicePreview(
-            builder: (context) => const 
+          //  DevicePreview(
+          //   builder: (context) => const 
             
              Portfolio(),
-          )
+             
+          // )
           
           ),
     ),

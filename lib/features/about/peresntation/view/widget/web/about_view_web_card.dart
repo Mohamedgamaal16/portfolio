@@ -3,7 +3,6 @@ import 'package:portfolio/core/changes/strings.dart';
 import 'package:portfolio/core/color/colors.dart';
 import 'package:portfolio/core/functions/function.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-import 'package:portfolio/core/utils/about_model.dart';
 import 'package:portfolio/core/utils/app_styles.dart';
 
 class AboutViewCard extends StatefulWidget {
@@ -55,7 +54,7 @@ class _AboutViewCard extends State<AboutViewCard> {
             ],
             borderRadius: BorderRadius.circular(30),
             color: AppColors.whiteColor),
-        height: ScreenSize.screeenHeight(context) * 0.25,
+        height: ScreenSize.screeenWidth(context) < 900 ? ScreenSize.screeenHeight(context) * 0.25:ScreenSize.screeenHeight(context) * 0.3,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

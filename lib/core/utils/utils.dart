@@ -3,6 +3,7 @@ import 'package:portfolio/core/providers/scroll_provider.dart';
 import 'package:portfolio/features/about/peresntation/view/about_view.dart';
 import 'package:portfolio/features/home/Peresention/view/first_section.dart';
 import 'package:portfolio/features/home/Peresention/view_model/download_cv_provider.dart';
+import 'package:portfolio/features/portfolio/peresntation/view/portfolio_view.dart';
 import 'package:portfolio/features/services/peresntation/view/services_view.dart';
 import 'package:provider/provider.dart';
 
@@ -20,10 +21,7 @@ class BodyUtils {
             return DownloadMyCvProvider();
           },
           child: const AboutSectionView()),
-      Container(
-        color: Colors.green,
-        height: 600,
-      ),
+      // const PortfolioSectionView(),
       Container(
         color: Colors.blue,
         height: 600,
