@@ -23,7 +23,7 @@ class ServicesSectionViewBodyWeb extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [          const SizedBox(height: 30,),
 
-            Text(
+            SelectableText(
               services,
               style: AppStyles.styleRegular40(context),
             ),

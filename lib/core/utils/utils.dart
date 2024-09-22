@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/providers/scroll_provider.dart';
 import 'package:portfolio/features/about/peresntation/view/about_view.dart';
+import 'package:portfolio/features/fotter/persention/footer.dart';
+import 'package:portfolio/features/fotter/view_model/send_mail.dart';
 import 'package:portfolio/features/home/Peresention/view/first_section.dart';
 import 'package:portfolio/features/home/Peresention/view_model/download_cv_provider.dart';
 import 'package:portfolio/features/portfolio/peresntation/view/portfolio_view.dart';
@@ -21,11 +23,12 @@ class BodyUtils {
             return DownloadMyCvProvider();
           },
           child: const AboutSectionView()),
-      // const PortfolioSectionView(),
-      Container(
-        color: Colors.blue,
-        height: 600,
-      )
+      const PortfolioSectionView(),
+      ChangeNotifierProvider(
+          create: (BuildContext context) {
+            return MailProvider();
+          },
+          child: const Footer())
     ];
   }
 }

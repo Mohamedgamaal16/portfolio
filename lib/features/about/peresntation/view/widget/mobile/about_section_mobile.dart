@@ -24,7 +24,7 @@ class AboutSectionViewBodyMobile extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             
-            Text(
+            SelectableText(
               about,
               style: AppStyles.styleRegular40(context),
             ),
@@ -61,7 +61,9 @@ class AboutSectionViewBodyMobile extends StatelessWidget {
                 ),
                 const TextAboutContainer(width: 1, height: .35,)
               ],
-            )
+            ), const SizedBox(
+              height: 10,
+            ),
           ],
         ),
       ),

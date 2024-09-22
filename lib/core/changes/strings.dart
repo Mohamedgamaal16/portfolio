@@ -49,8 +49,7 @@ List<ServicesModel> servicesUtils = [
   ServicesModel(
     name: 'App performance',
     icon: 'assets/icons/service-icon2.png',
-    description:
-        "improving performance for a seamless user experience.",
+    description: "improving performance for a seamless user experience.",
   ),
 ];
 
@@ -90,7 +89,11 @@ List<AboutModel> aboutUtils = [
   ),
 ];
 
-
 // portfolio
 String portfolio = "Creative Works";
-String portfolioMiniDescription ="Check out my latest projects";
+String portfolioMiniDescription = "Check out my latest projects";
+String all = "All";
+
+String mobileApp = "Mobile App";
+String websites = "Websites";
+String uitoProduct = "UI to Product";

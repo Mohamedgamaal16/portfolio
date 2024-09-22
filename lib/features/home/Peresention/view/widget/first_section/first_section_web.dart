@@ -33,7 +33,7 @@ class FirstSectionWebView extends StatelessWidget {
                   const SizedBox(height: 100),
                   Row(
                     children: [
-                      Text(hellotag, style: AppStyles.styleRegular25(context)),
+                      SelectableText(hellotag, style: AppStyles.styleRegular25(context)),
                       EntranceFader(
                         offset: const Offset(0, 0),
                         delay: const Duration(seconds: 2),
@@ -46,7 +46,7 @@ class FirstSectionWebView extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 5),
-                  Text(yourname, style: AppStyles.styleRegular40(context)),
+                  SelectableText(yourname, style: AppStyles.styleRegular40(context)),
                   const SizedBox(height: 5),
                   AnimatedTextKit(
                     isRepeatingAnimation: true,
@@ -62,7 +62,7 @@ class FirstSectionWebView extends StatelessWidget {
                     padding: const EdgeInsets.only(right: 10.0),
                     child: SizedBox(
                       width: screenWidth * 0.35,
-                      child: Text(miniDescription,
+                      child: SelectableText(miniDescription,
                           textAlign: TextAlign.justify,
                           style: AppStyles.styleRegular16(context)),
                     ),

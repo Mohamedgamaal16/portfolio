@@ -8,4 +8,5 @@
 String fitness = "assets/imgs/fitness app.png";
 String climbUp = "assets/imgs/climbUp.png";
 String quotes = "assets/imgs/quotes.png";
-String responsiveDashboard = "assets/imgs/responsive dashboard.png";
+String responsiveDashboard = "assets/imgs/responsive dashboard.jpg";
+String laskNewsApp = "assets/imgs/lask.png";

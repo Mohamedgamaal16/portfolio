@@ -26,7 +26,7 @@ class AboutSectionViewBodyWeb extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            Text(
+            SelectableText(
               about,
               style: AppStyles.styleRegular40(context),
             ),
@@ -64,6 +64,9 @@ class AboutSectionViewBodyWeb extends StatelessWidget {
                 const TextAboutContainer(width: 0.4, height: 0.2,)
               ],
             )
+            , const SizedBox(
+              height: 15,
+            ),
           ],
         ),
       ),

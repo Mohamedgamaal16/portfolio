@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/core/changes/strings.dart';
 import 'package:portfolio/core/color/colors.dart';
 import 'package:portfolio/core/utils/app_styles.dart';
+import 'package:portfolio/features/fotter/view_model/send_mail.dart';
 import 'package:portfolio/features/services/peresntation/view/widget/web/custom_services_icon.dart';
+import 'package:provider/provider.dart';
 
 class ServicesViewCard extends StatefulWidget {
   const ServicesViewCard(
@@ -19,8 +21,10 @@ class ServicesViewCard extends StatefulWidget {
 
 class _ServicesViewCardState extends State<ServicesViewCard> {
   bool isHovered = false;
+
   @override
   Widget build(BuildContext context) {
+
     return MouseRegion(
       onEnter: (event) {
         setState(() {
@@ -62,7 +66,7 @@ class _ServicesViewCardState extends State<ServicesViewCard> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  SelectableText(
                     servicesUtils[widget.index].name,
                     style: AppStyles.styleRegular20(context).copyWith(
                         color: AppColors.primaryColor,
@@ -72,7 +76,7 @@ class _ServicesViewCardState extends State<ServicesViewCard> {
                   const SizedBox(
                     height: 10,
                   ),
-                  Text(servicesUtils[widget.index].description,
+                  SelectableText(servicesUtils[widget.index].description,
                       style: AppStyles.styleRegular16(context).copyWith(
                           color: AppColors.lightBlack,
                           fontSize: widget.descFontSize)),

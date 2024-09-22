@@ -20,7 +20,7 @@ class TextAboutContainer extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          SelectableText(
             mySkill,
             style: AppStyles.styleRegular40(context).copyWith(
                 fontWeight: FontWeight.bold, color: AppColors.primaryColor),
@@ -28,11 +28,11 @@ class TextAboutContainer extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          Text(didgitl, style: AppStyles.styleBold40(context)),
+          SelectableText(didgitl, style: AppStyles.styleBold40(context)),
           const SizedBox(height: 20),
-          Text(aboutMiniDescription1, style: AppStyles.styleRegular14(context)),
+          SelectableText(aboutMiniDescription1, style: AppStyles.styleRegular14(context)),
           const SizedBox(height: 10),
-          Text(aboutMiniDescription2, style: AppStyles.styleRegular14(context)),
+          SelectableText(aboutMiniDescription2, style: AppStyles.styleRegular14(context)),
           const SizedBox(height: 20),
           CustomDownloadCv(
             height: height,

@@ -68,7 +68,7 @@ class _AboutViewCard extends State<AboutViewCard> {
               circularStrokeCap: CircularStrokeCap.round,
               progressColor: aboutUtils[widget.index - 1].color,
               center: Center(
-                child: Text(
+                child: SelectableText(
                   aboutUtils[widget.index - 1].percentText,
                   style: AppStyles.styleRegular20(context).copyWith(
                       fontWeight: FontWeight.bold,
@@ -81,7 +81,7 @@ class _AboutViewCard extends State<AboutViewCard> {
               height: 10,
             ),
             Center(
-              child: Text(
+              child: SelectableText(
                 aboutUtils[widget.index - 1].name,
                 style: AppStyles.styleRegular20(context).copyWith(
                     fontWeight: FontWeight.bold,

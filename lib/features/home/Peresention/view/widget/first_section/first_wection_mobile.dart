@@ -31,7 +31,7 @@ class FirstSectionMobileView extends StatelessWidget {
             Flexible(
               child: Row(
                 children: [
-                  Text(
+                  SelectableText(
                     hellotag,
                     style: AppStyles.styleRegular25(context),
                   ),
@@ -48,7 +48,7 @@ class FirstSectionMobileView extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 5),
-            Text(
+            SelectableText(
               yourname,
               style: AppStyles.styleRegular40(context),
             ),
@@ -67,7 +67,7 @@ class FirstSectionMobileView extends StatelessWidget {
             const SizedBox(height: 5),
             Padding(
               padding: const EdgeInsets.only(right: 10.0),
-              child: Text(
+              child: SelectableText(
                 miniDescription,
                 textAlign: TextAlign.justify,
                 style: AppStyles.styleRegular14(context),

@@ -25,7 +25,7 @@ class ServicesSectionViewBodyMobile extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            Text(
+            SelectableText(
               services,
               style: AppStyles.styleRegular40(context),
             ),
